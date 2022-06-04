@@ -15,11 +15,24 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 	let Personne = MEN.Personne;							// Récupère l'objet Personne stocké dans l'objet MON_ESPACE_NOM (MEN)
 	//console.log(Personne);
 	//console.log(Personne.prototype);
-
-
+	/*function afficheCours(params) {
+		return `Les cours que je suis sont : ${this.cours}`
+	}*/
+	
 	/**
 	 * Méthodes publiques
 	 */
+	 function afficheDetails() {
+		 let domString = `
+		 				<div>
+		 					<p>${this.afficheNom()}</p>
+							<p>:Les cours que je suis sont : ${this.cours}</p>
+						</div>
+		 `;
+		this.elResult.insertAdjacentHTML('beforeend', domString);
+	 }
+
+
 	function afficheCours() {
 		//console.log(this.listeDeCours)
 		let chaineCours = this.creeListe(this.listeDeCours);
@@ -34,9 +47,10 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 	/**
 	 * Création du constructeur Etudiant
 	 */
-	let Etudiant = function(prenom, nom) {
-		Personne.call(this, prenom, nom);					// La méthode call() réalise un appel à une fonction avec une valeur this donnée et des arguments fournis individuellement. (MDN)
-		this.listeDeCours = [];
+	let Etudiant = function(prenom, nom, cours) {
+		Personne.call(this, prenom, nom);	// La méthode call() réalise un appel à une fonction avec une valeur this donnée et des arguments fournis individuellement. (MDN)
+		this.cours = cours;
+		//console.log()
 	}
 
 
@@ -51,9 +65,8 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 	Etudiant.prototype.constructor = Etudiant;
 
 	// Ensemble des méthodes publiques dans le prototype de Etudiant ajoutées aux méthodes héritées de Personne
-	Etudiant.prototype.afficheCours = afficheCours;
-	Etudiant.prototype.ajouteCours = ajouteCours;
-
+	Etudiant.prototype.afficheDetails = afficheDetails();
+    //Etudiant.prototype.afficheNom = afficheNom(); //moi
 
 	// Crée et affecte la clé Etudiant de l'objet MON_ESPACE_NOM au constructeur Etudiant
 	MON_ESPACE_NOM.Etudiant = Etudiant;

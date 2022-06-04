@@ -14,17 +14,17 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 	/**
 	 * Méthodes publiques
 	 */
-	function sePresente() {
+	function afficheNom() {
 		return `Je m'appelle ${this.prenom} ${this.nom}`;
 	}
 
-	function creeListe(tableau) {
+	/*function creeListe(tableau) {
 		let chaine = '';
 		for (let i = 0, l = tableau.length; i < l; i++) {
 			chaine += `${tableau[i]}\n`;
 		}
 		return chaine;
-	}
+	}*/
 
 
 	/**
@@ -34,26 +34,21 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 	let Personne = function(prenom, nom) {
 		this.prenom = prenom;
 		this.nom = nom;
+		this.elResult,
+		afficheNom();
 	}	
-
 
 	/**
 	 * Ensemble des méthodes publiques dans le prototype de Personne
 	 */
+	
 	Personne.prototype = {
 		constructor: Personne,
-		setPrenom: function(prenom) {
-			this.prenom = prenom;
-		},
-		setNom: function(nom) {
-			this.nom = nom;
-		},
-		sePresente: sePresente,
-		creeListe: creeListe
-	}
-
-
+		
+	}	
+	
+	
 	// Crée et affecte la clé Personne de l'objet MON_ESPACE_NOM au constructeur Personne
 	MON_ESPACE_NOM.Personne = Personne;
 
-})();
+})(MON_ESPACE_NOM);
