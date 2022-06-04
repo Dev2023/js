@@ -12,7 +12,7 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 (function(MEN) {
 	
 	//console.log(M)
-	let Personne = MEN.Personne;							// Récupère l'objet Personne stocké dans l'objet MON_ESPACE_NOM (MEN)
+	let Personne = MEN.Personne;	// Récupère l'objet Personne stocké dans l'objet MON_ESPACE_NOM (MEN)
 	//console.log(Personne);
 	//console.log(Personne.prototype);
 	/*function afficheCours(params) {
@@ -22,6 +22,10 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 	/**
 	 * Méthodes publiques
 	 */
+	 function afficheNom() {
+		return `Je m'appelle ${this.prenom} ${this.nom}`;
+	}
+
 	 function afficheDetails() {
 		 let domString = `
 		 				<div>
@@ -31,6 +35,7 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 		 `;
 		this.elResult.insertAdjacentHTML('beforeend', domString);
 	 }
+//console.log(domString);
 
 
 	function afficheCours() {
@@ -43,7 +48,6 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 		this.listeDeCours.push(cours);
 	}
 	
-
 	/**
 	 * Création du constructeur Etudiant
 	 */
@@ -52,7 +56,6 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 		this.cours = cours;
 		//console.log()
 	}
-
 
 	/**
 	 * Pour que Étudiant puisse hérité du constructeur de Personne,
@@ -65,8 +68,9 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 	Etudiant.prototype.constructor = Etudiant;
 
 	// Ensemble des méthodes publiques dans le prototype de Etudiant ajoutées aux méthodes héritées de Personne
-	Etudiant.prototype.afficheDetails = afficheDetails();
-    //Etudiant.prototype.afficheNom = afficheNom(); //moi
+	Etudiant.prototype.afficheDetails = afficheDetails;
+	Etudiant.prototype.afficheCours = afficheCours;
+    Etudiant.prototype.afficheNom = afficheNom; //moi
 
 	// Crée et affecte la clé Etudiant de l'objet MON_ESPACE_NOM au constructeur Etudiant
 	MON_ESPACE_NOM.Etudiant = Etudiant;

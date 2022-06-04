@@ -1,7 +1,5 @@
 (function(MEN) {
 
-    console.log(MEN)
-
     let Personne = MEN.Personne,
         Etudiant = MEN.Etudiant,
         Professeur = MEN.Professeur
@@ -16,7 +14,8 @@
         elSelect = elForm.statut,
         elDetails = document.querySelectorAll('[data-js-details]'),
         elBtn = elForm.querySelector('button'),
-        checkedOption = 'etudiant';
+        checkedOption = 'etudiant',
+        cours = elInputECours
     
 
     elSelect.addEventListener('change', function() {
@@ -45,12 +44,12 @@
 
         let prenom = elInputPrenom.value,
         nom = elInputNom.value;
+    
 
     if (checkedOption == 'etudiant')
         cours = elInputECours.value;
         new Etudiant(prenom, nom, cours).afficheDetails();
-            
-
-        })
+        
+    })   
 
 })(MON_ESPACE_NOM);

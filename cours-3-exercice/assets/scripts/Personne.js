@@ -34,8 +34,8 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 	let Personne = function(prenom, nom) {
 		this.prenom = prenom;
 		this.nom = nom;
-		this.elResult,
-		afficheNom();
+		this.elResult;
+		
 	}	
 
 	/**
@@ -44,7 +44,7 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 	
 	Personne.prototype = {
 		constructor: Personne,
-		
+		afficheNom
 	}	
 	
 	

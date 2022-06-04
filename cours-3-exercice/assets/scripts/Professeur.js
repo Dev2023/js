@@ -53,7 +53,7 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 	 * Création du constructeur Professeur
 	 */
 	let Professeur = function(prenom, nom) {
-		Personne.call(this, prenom, nom);				// La méthode call() réalise un appel à une fonction avec une valeur this donnée et des arguments fournis individuellement. (MDN)
+		Personne.call(this, prenom, nom);	// La méthode call() réalise un appel à une fonction avec une valeur this donnée et des arguments fournis individuellement. (MDN)
 		this.listeDeCours = [];
 		this.listeHoraire = [];
 		this.listeCourriel = [];
