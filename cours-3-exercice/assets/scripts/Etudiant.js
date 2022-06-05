@@ -13,7 +13,7 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 	
 	//console.log(M)
 	let Personne = MEN.Personne;	// Récupère l'objet Personne stocké dans l'objet MON_ESPACE_NOM (MEN)
-	//console.log(Personne);
+	
 	//console.log(Personne.prototype);
 	/*function afficheCours(params) {
 		return `Les cours que je suis sont : ${this.cours}`
@@ -25,28 +25,30 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 	 function afficheNom() {
 		return `Je m'appelle ${this.prenom} ${this.nom}`;
 	}
-
-	 function afficheDetails() {
-		 let domString = `
+	
+	
+	function afficheDetails() {
+		this.elResult = document.querySelector('[data-js-result]');
+		let domString = `
 		 				<div>
-		 					<p>${this.afficheNom()}</p>
-							<p>:Les cours que je suis sont : ${this.cours}</p>
+		 					<p>${this.afficheNom()}.</p>
+							<p>Les cours que je suis sont : ${this.cours}.</p>
 						</div>
-		 `;
+		`;
+		
 		this.elResult.insertAdjacentHTML('beforeend', domString);
-	 }
-//console.log(domString);
-
+	}	
+	
 
 	function afficheCours() {
-		//console.log(this.listeDeCours)
+		//console.log(this.cours)
 		let chaineCours = this.creeListe(this.listeDeCours);
 		return `Voici la liste de cours que je suis :\n${chaineCours}`;
 	}
 
-	function ajouteCours(cours) {
+	/*function ajouteCours(cours) {
 		this.listeDeCours.push(cours);
-	}
+	}*/
 	
 	/**
 	 * Création du constructeur Etudiant
@@ -70,7 +72,7 @@ var MON_ESPACE_NOM = MON_ESPACE_NOM || {};
 	// Ensemble des méthodes publiques dans le prototype de Etudiant ajoutées aux méthodes héritées de Personne
 	Etudiant.prototype.afficheDetails = afficheDetails;
 	Etudiant.prototype.afficheCours = afficheCours;
-    Etudiant.prototype.afficheNom = afficheNom; //moi
+    Etudiant.prototype.afficheNom = afficheNom; 
 
 	// Crée et affecte la clé Etudiant de l'objet MON_ESPACE_NOM au constructeur Etudiant
 	MON_ESPACE_NOM.Etudiant = Etudiant;
