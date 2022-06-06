@@ -55,7 +55,7 @@ Occasion.prototype = Object.create(Auto.prototype);
 Occasion.prototype.constructor = Occasion;
 
 //Ensemble de methodes pub dans le prototype ajoutés aux meth heritées
-
+Occasion.prototype.afficheAutos = afficheAutos;
 
 // Afectation de la cle Occasion de l'objet VEHICULE au constructeur Occasion
 VEHICULE.Occasion = Occasion;

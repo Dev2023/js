@@ -31,47 +31,74 @@
 
     elSel.addEventListener('change', function() {
         option = elSel.value;
+        let autos = [], marque = [], modele = [],
+            annee = [], image = [], prix = [], prixReduit = [],
+            nbKm = [], couleur = [], transmission = []; 
         if (option !== 0 && option == 'occasion') {
-            let auto = [];
-            //marque = [];
-                       
+                      
             for (let i = 0; i < occasions.length; i++) {
-                auto.push(occasions[i]);
-                //break;
-               
-                for (let l = 1; l < auto.length; l++) {
-                    marque = auto[i][0];
-                    modele = auto[i][l], l++;
-                    annee = auto[i][l], l++;
-                    image = auto[i][l], l++;
-                break;    
+                autos.push(occasions[i]);
+                        
+                for (let l = 0; l < autos.length; l++) {
+                    console.log(i), i-1;
+                    marque.push(autos[i][l]), l++;
+                    modele.push(autos[i][l]), l++;
+                    annee.push(autos[i][l]), l++;
+                    image.push(autos[i][l]), l++;
+                    prix.push(autos[i][l]), l++;
+                    prixReduit.push(autos[i][l]), l++;
+                    nbKm.push(autos[i][l]), l++;
+                    couleur.push(autos[i][l]), l++;
+                    transmission.push(autos[i][l]);
                 }    
-                
             }    
-                
                 console.log(marque);
                 console.log(modele);
-                /*for(let auto of occasions) {
-
-                }*/
-                //marque = occasions[i];//[i];
-                //modele = occasions[i];//[i];
-                //annee = occasions[i];//[i];
-                //console.log(marque, modele, annee);
-                document.write(image);
-            //console.log(modele);
                 console.log(annee);
-             
-            console.log(auto);
-            
-            //console.log(occasions);
+                console.log(prix);
+                console.log(image);
+                console.log(prixReduit);
+                console.log(nbKm);
+                console.log(couleur);
+                console.log(transmission);
+                                    
+                console.log(autos);
         }
-        else {
-            console.log(neuves);
-            console.log(option);
+        else if (option !== 0 && option == 'neuve') {
+            for (let i = 0; i < neuves.length; i++) {
+                autos.push(neuves[i]);
+                        
+                for (let l = 0; l < autos.length; l++) {
+                    console.log(i), i-1;
+                    marque.push(autos[i][l]), l++;
+                    modele.push(autos[i][l]), l++;
+                    annee.push(autos[i][l]), l++;
+                    image.push(autos[i][l]), l++;
+                    prix.push(autos[i][l]), l++;
+                    prixReduit.push(autos[i][l]), l++;
+                    //nbKm.push(autos[i][l]), l++;
+                    couleur.push(autos[i][l]), l++;
+                    //transmission.push(autos[i][l]);
+                }    
+            }    
+                console.log(marque);
+                console.log(modele);
+                console.log(annee);
+                console.log(prix);
+                console.log(image);
+                console.log(prixReduit);
+                //console.log(nbKm);
+                console.log(couleur);
+                //console.log(transmission);
+                console.log(neuves);
+
         }   
-            
-        //afficheAutos(); 
+        for (i = 0; i < marque.length; i++) {
+            new Occasion(marque[i], modele[i], annee[i], prix[i], image[i],
+                prixReduit[i], couleur[i], nbKm[i], transmission[i]).afficheAutos();
+        }
+             
+         
             
         
 
