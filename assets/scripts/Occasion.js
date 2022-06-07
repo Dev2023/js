@@ -41,11 +41,11 @@ var VEHICULE = VEHICULE || {};
     }
 
     // Constructeur Occasion 
-let Occasion = function(marque, modele, annee, image, 
+/*let Occasion = function(marque, modele, annee, image, 
         prix, prixReduit, couleur, nbKm, transmission) {
     Auto.call(this, marque, modele, annee, image, 
         prix, prixReduit, couleur, nbKm, transmission);                    
-
+  
 }
 
 // Heritage du constructeur de Auto 
@@ -58,6 +58,6 @@ Occasion.prototype.constructor = Occasion;
 Occasion.prototype.afficheAutos = afficheAutos;
 
 // Afectation de la cle Occasion de l'objet VEHICULE au constructeur Occasion
-VEHICULE.Occasion = Occasion;
+VEHICULE.Occasion = Occasion;*/
  
 })(VEHICULE);

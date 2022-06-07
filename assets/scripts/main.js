@@ -34,9 +34,15 @@
         let autos = [], marque = [], modele = [],
             annee = [], image = [], prix = [], prixReduit = [],
             nbKm = [], couleur = [], transmission = []; 
+        
         if (option !== 0 && option == 'occasion') {
-                      
-            for (let i = 0; i < occasions.length; i++) {
+
+            for(let object of occasions ) {
+              console.log(new Auto()); ;
+            } 
+            console.log(object[0])         
+                    
+            /*for (let i = 0; i < occasions.length; i++) {
                 autos.push(occasions[i]);
                         
                 for (let l = 0; l < autos.length; l++) {
@@ -61,8 +67,12 @@
                 console.log(nbKm);
                 console.log(couleur);
                 console.log(transmission);
-                                    
-                console.log(autos);
+                console.log(autos); 
+            for (i = 0; i < marque.length; i++) {
+                new Auto(marque[i], modele[i], annee[i], prix[i], image[i],
+                    prixReduit[i], couleur[i], nbKm[i], transmission[i]).afficheAutos();
+            }       
+                
         }
         else if (option !== 0 && option == 'neuve') {
             for (let i = 0; i < neuves.length; i++) {
@@ -90,13 +100,10 @@
                 //console.log(nbKm);
                 console.log(couleur);
                 //console.log(transmission);
-                console.log(neuves);
+                console.log(neuves);*/
 
         }   
-        for (i = 0; i < marque.length; i++) {
-            new Occasion(marque[i], modele[i], annee[i], prix[i], image[i],
-                prixReduit[i], couleur[i], nbKm[i], transmission[i]).afficheAutos();
-        }
+        
              
          
             

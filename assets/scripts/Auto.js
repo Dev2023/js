@@ -16,7 +16,7 @@ var VEHICULE = VEHICULE || {};
         this.transmission = transmission;
         this.couleur = couleur;
         this.image = image;
-        this.elList;
+        //this.elList;
     }
 
     // Prototype et ensemble de methodes publics
@@ -24,6 +24,8 @@ var VEHICULE = VEHICULE || {};
         constructor: Auto,
         afficheAutos
     }
+    console.log(new Auto()); 
+
 
     // Affectation  et création de la clé Auto de l'object VEHICULE au const Auto
     VEHICULE.Auto = Auto;
