@@ -32,14 +32,23 @@
         if (option !== 0 && option == 'occasion') {
 
             for(let object of occasions ) {
-                
                 let marque = object[0], modele = object[1],  annee = object[2], image = object[3], prix = object[4],
-                    prixReduit = object[5], couleur = object[6], nbKm = object[7], transmission = object[8]
+                    prixReduit = object[5], couleur = object[6];
                  
-                new Occasion(marque, modele, annee, image, prix, prixReduit, couleur, nbKm, transmission).afficheAutos()
+                new Occasion(marque, modele, annee, image, prix, prixReduit, couleur).afficheAutos()
             }
-
-        }                        
+        } 
+        else if (option !== 0 && option == 'neuve') {
+            for(let object of neuves ) {
+                let marque = object[0], modele = object[1],  annee = object[2], image = object[3], prix = object[4],
+                    prixReduit = object[5], couleur = object[6]
+                 
+                new Neuve(marque, modele, annee, image, prix, prixReduit, couleur).afficheAutos()
+            console.log(object[0]);
+            }
+            
+        }
+                               
     })            
                  
 })(VEHICULE);                

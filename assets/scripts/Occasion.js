@@ -51,9 +51,7 @@ var VEHICULE = VEHICULE || {};
     }
     
     Occasion.prototype = Object.create(Auto.prototype);
-
     
-
     Occasion.prototype.constructor = Occasion;
 
     Occasion.prototype.afficheAutos = afficheAutos;

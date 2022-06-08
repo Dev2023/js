@@ -2,8 +2,14 @@ var VEHICULE = VEHICULE || {};
 
 (function(VEHICULE) {
 
+    var Auto = VEHICULE.Auto;
 
-    /*
+    function afficheAutos() {
+
+        console.log(this.couleurs)
+
+        this.elList = document.querySelector('[data-js-list-autos]');
+    
     let autoDOM = `
             <article class="auto">
                 <div class="auto__img-wrapper">
@@ -33,7 +39,28 @@ var VEHICULE = VEHICULE || {};
                     </div>
                 </div>
             </article>`;
-    */
+    
+        this.elList.insertAdjacentHTML('beforeend', autoDOM);
+    }    
 
+    let Neuve = function(marque, modele, annee, image, prix,
+        prixReduit, couleurs) {
+        this.marque = marque;
+        this.modele = modele;
+        this.annee = annee;
+        this.image = image;
+        this.prix = prix;
+        this.prixReduit = prixReduit;
+        this.couleurs = couleurs;
+        
+    }
+
+    Neuve.prototype = Object.create(Auto.prototype);
+
+    Neuve.prototype.constructor = Neuve;
+
+    Neuve.prototype.afficheAutos = afficheAutos;
+
+    VEHICULE.Neuve = Neuve;
  
 })(VEHICULE);
